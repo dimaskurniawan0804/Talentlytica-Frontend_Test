@@ -1,0 +1,69 @@
+.wrapper {
+  // background-color: pink;
+  // height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+  &__content {
+    background-color: rgb(215, 214, 214);
+    // width: 800px;
+    height: max-content;
+    // margin-top: 100px;
+    border-radius: 8px;
+    display: flex;
+    padding: 16px;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__header {
+      font-size: 24px;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: 700;
+    }
+    &__main {
+      table {
+        border-collapse: separate;
+        border-spacing: 0 15px;
+      }
+      th {
+        font-family: "Times New Roman", Times, serif;
+        font-weight: 400;
+      }
+      tr {
+        background-color: white;
+        border-radius: 10px;
+        .student {
+          padding: 5px;
+          font-family: "Times New Roman", Times, serif;
+          font-weight: 400;
+          .item {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 32px;
+              height: 32px;
+            }
+          }
+        }
+        th,
+        td {
+          width: 150px;
+          text-align: center;
+          //   border: 1px solid black;
+          padding: 5px;
+        }
+      }
+    }
+    &__button {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+    }
+  }
+}
