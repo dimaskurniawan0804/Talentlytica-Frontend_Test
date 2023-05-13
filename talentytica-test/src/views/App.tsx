@@ -120,7 +120,7 @@ function App() {
     // console.log(temp)
 
     // create json and download json file when click button "Simpan"
-    const jsonString = JSON.stringify(temp);
+    const jsonString = JSON.stringify(temp,null,2);
     const blob = new Blob([jsonString], { type: "application/json" });
 
     const url = URL.createObjectURL(blob);
