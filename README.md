@@ -2,7 +2,7 @@
 
 ### The steps to run this project
 
-You can see the web that I deployed to vercel through the following link  : [https://talentlytica-frontend-test-wasgitel.vercel.app/]
+You can see the web that I deployed to vercel through the following link  : https://talentlytica-frontend-test-wasgitel.vercel.app/
 
 or 
 
