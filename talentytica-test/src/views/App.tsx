@@ -78,7 +78,7 @@ function App() {
     },
   ]);
 
-  const options = [
+  const [options] = useState([
     { name: "0", value: 0 },
     { name: "1", value: 1 },
     { name: "2", value: 2 },
@@ -90,9 +90,9 @@ function App() {
     { name: "8", value: 8 },
     { name: "9", value: 9 },
     { name: "10", value: 10 },
-  ];
+  ]);
 
-  const updateData = (e: number, index: number, aspekNumber: number) => {
+  const updateData = (e: number, index: number, aspekNumber: number): void => {
     const newData = [...data];
     newData[index] = {
       ...newData[index],
@@ -101,7 +101,8 @@ function App() {
     setData(newData);
   };
 
-  const saveNilai = () => {
+  const saveNilai = (): void => {
+    console.log("BUMI >>>");
     // process for manipulate input from user to create object
     const temp: { [key: string]: { [key: string]: number } } = {};
 
@@ -120,7 +121,7 @@ function App() {
     // console.log(temp)
 
     // create json and download json file when click button "Simpan"
-    const jsonString = JSON.stringify(temp,null,2);
+    const jsonString = JSON.stringify(temp, null, 2);
     const blob = new Blob([jsonString], { type: "application/json" });
 
     const url = URL.createObjectURL(blob);
@@ -136,9 +137,7 @@ function App() {
     <>
       <div className="wrapper">
         <div className="wrapper__content">
-          <div className="wrapper__content__header">
-            Aplikasi Penilaian Mahasiswa
-          </div>
+          <div className="wrapper__content__header">Aplikasi Penilaian Mahasiswa</div>
           <div className="wrapper__content__main">
             <table>
               <thead>
@@ -159,44 +158,16 @@ function App() {
                         </div>
                       </td>
                       <td>
-                        <Dropdown
-                          value={el.aspek_penilaian_1}
-                          onChange={(e) => updateData(e.value, i, 1)}
-                          options={options}
-                          optionLabel="name"
-                          placeholder="Masukan Nilai"
-                          className="w-full md:w-14rem"
-                        />
+                        <Dropdown value={el.aspek_penilaian_1} onChange={(e) => updateData(e.value, i, 1)} options={options} optionLabel="name" placeholder="Masukan Nilai" className="w-full md:w-14rem" data-testid={`dropdown-${i}`} />
                       </td>
                       <td>
-                        <Dropdown
-                          value={el.aspek_penilaian_2}
-                          onChange={(e) => updateData(e.value, i, 2)}
-                          options={options}
-                          optionLabel="name"
-                          placeholder="Masukan Nilai"
-                          className="w-full md:w-14rem"
-                        />
+                        <Dropdown value={el.aspek_penilaian_2} onChange={(e) => updateData(e.value, i, 2)} options={options} optionLabel="name" placeholder="Masukan Nilai" className="w-full md:w-14rem" />
                       </td>
                       <td>
-                        <Dropdown
-                          value={el.aspek_penilaian_3}
-                          onChange={(e) => updateData(e.value, i, 3)}
-                          options={options}
-                          optionLabel="name"
-                          placeholder="Masukan Nilai"
-                          className="w-full md:w-14rem"
-                        />
+                        <Dropdown value={el.aspek_penilaian_3} onChange={(e) => updateData(e.value, i, 3)} options={options} optionLabel="name" placeholder="Masukan Nilai" className="w-full md:w-14rem" />
                       </td>
                       <td>
-                        <Dropdown
-                          value={el.aspek_penilaian_4}
-                          onChange={(e) => updateData(e.value, i, 4)}
-                          options={options}
-                          optionLabel="name"
-                          placeholder="Masukan Nilai"
-                          className="w-full md:w-14rem"
-                        />
+                        <Dropdown value={el.aspek_penilaian_4} onChange={(e) => updateData(e.value, i, 4)} options={options} optionLabel="name" placeholder="Masukan Nilai" className="w-full md:w-14rem" />
                       </td>
                     </tr>
                   );
